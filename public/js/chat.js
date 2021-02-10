@@ -33,8 +33,9 @@ socket.on("WelcomeMessage", (welcomeMessage) => {});
 socket.on("NewJoined", (joinedUser) => {
   const html = Mustache.render(joinTemplate, {
     username: joinedUser,
-    pos: "float:left;clear: both",
-    message: joinedUser + "joined lobby",
+    pos:
+      "float:left;clear: both;font-family: Lexend Mega, sans-serif;font-weight: bold;",
+    message: joinedUser + " joined the lobby",
     createdAt: moment(joinedUser.createdAt).format("h:mm a"),
   });
   messages.insertAdjacentHTML("beforeend", html);
@@ -111,8 +112,9 @@ socket.on("LocationRecieved", (locationUrl) => {
 socket.on("ByeMessage", (leftUser) => {
   const html = Mustache.render(leftTemplate, {
     username: leftUser,
-    pos: "float:left;clear: both",
-    message: leftUser + "left the lobby",
+    pos:
+      "float:left;clear: both;font-family: Lexend Mega, sans-serif;font-weight: bold;",
+    message: leftUser + " left the lobby",
     createdAt: moment(leftUser.createdAt).format("h:mm a"),
   });
   messages.insertAdjacentHTML("beforeend", html);

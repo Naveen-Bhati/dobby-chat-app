@@ -38,10 +38,18 @@
 .roomTitle,
 .usersListTitle,
 ul {
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 10px auto 35px auto;
   text-align: center;
   font-size: small;
+}
+ul li::before {
+  content: "\2022";
+  color: green;
+  font-weight: bolder;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 .usersListTitle {
   margin: 10px auto 15px auto;
@@ -59,6 +67,7 @@ li {
   font-weight: bolder;
   font-size: large;
   font-family: "Lexend Mega", sans-serif;
+  list-style: circle;
 }
 
 #sendButton,
@@ -141,15 +150,32 @@ input {
   clear: both;
 }
 .message {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to left,
     rgba(160, 158, 161, 0.664),
     rgb(63, 62, 62)
-  );
+  ); */
+  background-image: linear-gradient(to RIGHT, #6a1b9a, #ce93d8);
 
   margin: 17px 5px;
   border-radius: 10px;
   padding: 5px;
+}
+.join {
+  background-image: linear-gradient(
+    to right,
+    rgb(92, 182, 92),
+    rgb(92, 182, 92)
+  );
+  color: white;
+}
+.left {
+  background-image: linear-gradient(
+    to right,
+    rgb(233, 75, 70),
+    rgb(233, 75, 70)
+  );
+  color: white;
 }
 .upper {
   display: flex;
