@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.chatPage {
+  display: flex;
+}
+.chatContainer {
+  width: 80vw;
+  height: 100vh;
+}
+#messages {
+  border-radius: 5px;
+
+  display: block;
+  box-sizing: border-box;
+}
+.usersContainer {
+  background-color: rgb(63, 62, 62);
+  width: 20vw;
+  height: 100vh;
+}
+#usersListDiv {
+  background-color: rgb(63, 62, 62);
+  color: rgb(36, 35, 35);
+  width: 80%;
+  height: 80vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 10vh auto;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+#usersListDiv::-webkit-scrollbar {
+  display: none;
+}
+.roomTitle,
+.usersListTitle,
+ul {
+  color: white;
+  margin: 10px auto 35px auto;
+  text-align: center;
+  font-size: small;
+}
+.usersListTitle {
+  margin: 10px auto 15px auto;
+}
+.roomTitle h3 {
+  color: white;
+  margin-top: 5px;
+  font-weight: bolder;
+  font-size: large;
+  font-family: "Lexend Mega", sans-serif;
+}
+li {
+  color: white;
+  margin-top: 5px;
+  font-weight: bolder;
+  font-size: large;
+  font-family: "Lexend Mega", sans-serif;
+}
+
+#sendButton,
+#locationButton {
+  height: 70%;
+  width: 8vw;
+  margin: 1vh 0;
+  border-radius: 2px;
+  border-radius: 50px;
+  background-color: white;
+  outline-style: none;
+  border: none;
+  font-family: "Lexend Mega", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+input {
+  height: 80%;
+  border-radius: 50px;
+  width: 85%;
+  margin-left: 12px;
+  margin-right: 3px;
+  padding: 0 25px;
+  border: none;
+  outline-style: none;
+}
+
+.sendInputDiv {
+  flex: 0.85;
+  margin: 0.5vh 0;
+
+  padding-left: 15px;
+}
+.locationBtnDiv {
+  flex: 0.1;
+  margin: 0.5vh 0;
+}
+.chatMsgFooter {
+  display: flex;
+  height: 10vh;
+  overflow: hidden;
+  background-color: rgb(63, 62, 62);
+}
+
+.messageContainer {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+
+  background-size: cover;
+}
+/* .leftJoinMessage {
+  width: 50%;
+  background-color: blueviolet;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  margin: 10px auto;
+} */
+.navbarDiv {
+  height: 10vh;
+  background-color: rgb(63, 62, 62);
+  color: white;
+
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.right {
+  float: right;
+  clear: both;
+}
+.left {
+  float: left;
+  clear: both;
+}
+.message {
+  background-image: linear-gradient(
+    to left,
+    rgba(160, 158, 161, 0.664),
+    rgb(63, 62, 62)
+  );
+
+  margin: 17px 5px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.upper {
+  display: flex;
+  justify-content: flex-start;
+  color: lightgray;
+}
+.lowerTime {
+  display: flex;
+  justify-content: flex-end;
+  color: lightgray;
+  font-weight: lighter;
+}
+.lower {
+  margin: 3px 45px 2px 10px;
+  max-width: 50vw;
+}
+h6 {
+  font-weight: lighter;
+}
+p,
+a {
+  max-width: 50vw;
+  display: inline-block;
+  overflow-wrap: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media screen and (max-width: 559px) {
+  .sendInputDiv {
+    flex: 0.75;
+    margin: 0.5vh 0;
+
+    padding-left: 0;
+  }
+  .locationBtnDiv {
+    flex: 0.25;
+  }
+  input {
+    height: 80%;
+    border-radius: 50px;
+    width: 55%;
+    margin-left: 12px;
+    margin-right: 3px;
+    padding: 0 25px;
+    border: none;
+    outline-style: none;
+  }
+  #sendButton,
+  #locationButton {
+    height: 70%;
+
+    min-width: 21vw;
+    margin: 1vh 0;
+    border-radius: 2px;
+    border-radius: 50px;
+    background-color: white;
+    outline-style: none;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+  }
+  #locationButton {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 705px) and (max-width: 960px) {
+  #sendButton,
+  #locationButton {
+    min-width: 15vw;
+
+    font-family: "Courier New", Courier, monospace;
+  }
+  input {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 704px) {
+  #sendButton,
+  #locationButton {
+    min-width: 12vw;
+
+    font-family: "Courier New", Courier, monospace;
+  }
+  input {
+    width: 75%;
+  }
+}

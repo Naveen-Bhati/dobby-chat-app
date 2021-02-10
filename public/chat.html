@@ -1,0 +1,134 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="chat.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Potta+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="chatPage">
+      <div class="usersContainer">
+        <div id="usersListDiv"></div>
+      </div>
+      <div class="chatContainer">
+        <div class="navbarDiv" id="navbarDiv">
+          <h1 style="text-align: center">
+            Dobby Welcomes you Harry Potter Sir
+          </h1>
+        </div>
+
+        <div class="messageContainer">
+          <div id="messages"></div>
+        </div>
+
+        <div class="chatMsgFooter">
+          <div class="sendInputDiv">
+            <form id="messageForm">
+              <input
+                id="messageInput"
+                type="text"
+                required
+                autocomplete="off"
+              />
+              <button type="submit" id="sendButton">Send</button>
+            </form>
+          </div>
+          <div class="locationBtnDiv">
+            <button id="locationButton">Share location</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script id="message-template" type="text/html">
+      <div class="message" style="{{pos}}">
+        <div class="upper">
+          <h5>{{username}}</h5>
+        </div>
+        <div class="lower">
+          <p>{{message}}</p>
+        </div>
+        <div class="lowerTime">
+          <h6>{{createdAt}}</h6>
+        </div>
+      </div>
+    </script>
+
+    <script id="location-template" type="text/html">
+      <div class="message" style="{{pos}}">
+        <div class="upper">
+          <h5>{{username}}</h5>
+        </div>
+        <div class="lower">
+          <a href="{{location}}" target="_blank">My Location</a>
+        </div>
+        <div class="lowerTime">
+          <h6>{{createdAt}}</h6>
+        </div>
+      </div>
+    </script>
+
+    <script id="sidebar-template" type="text/html">
+      <div class="roomTitle">
+        <p>Welcome to House</p>
+        <h3>{{room}}</h3>
+      </div>
+      <div class="usersListTitle">Wizards Online</div>
+      <div class="usersListContainer">
+        <ul>
+          {{#users}}
+          <li>{{username}}</li>
+          {{/users}}
+        </ul>
+      </div>
+    </script>
+    <script id="join-template" type="text/html">
+      <div class="message" style="{{pos}}">
+        <div class="upper">
+          <h5>{{username}}</h5>
+        </div>
+        <div class="lower">
+          <p>{{message}}</p>
+        </div>
+        <div class="lowerTime">
+          <h6>{{createdAt}}</h6>
+        </div>
+      </div>
+    </script>
+    <script id="left-template" type="text/html">
+      <div class="message" style="{{pos}}">
+        <div class="upper">
+          <h5>{{username}}</h5>
+        </div>
+        <div class="lower">
+          <p>{{message}}</p>
+        </div>
+        <div class="lowerTime">
+          <h6>{{createdAt}}</h6>
+        </div>
+      </div>
+    </script>
+    <script id="navbar-template" type="text/html">
+      <div class="navbarDiv">
+        <h1 style="text-align: center;">Dobby welcomes {{username}} sir</h1>
+      </div>
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+  </body>
+</html>
