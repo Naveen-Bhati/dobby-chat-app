@@ -269,3 +269,20 @@ a {
     width: 75%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .chatContainer {
+    width: 100vw;
+  }
+
+  .usersContainer {
+    background-color: rgb(63, 62, 62);
+    display: none;
+    width: 0vw;
+    height: 100vh;
+  }
+  #sendButton,
+  #locationButton {
+    padding: 0;
+  }
+}

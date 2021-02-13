@@ -2,6 +2,7 @@ const express = require("express");
 const http = require("http");
 const socketio = require("socket.io");
 const path = require("path");
+const dotenv = require("dotenv").config();
 
 const { generateMessage, generateLocationUrl } = require("./utils/messages");
 const {
@@ -16,7 +17,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 const publicDirectoryPath = path.join(__dirname, "../public");
 app.use(express.static(publicDirectoryPath));
-const port = process.env.PORT || 3000;
+const port = process.env.PROD_PORT || process.env.DEV_PORT;
 
 io.on("connection", (socket) => {
   socket.on("JoinRoom", (options, callback) => {
